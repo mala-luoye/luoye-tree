@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { program } = require("commander")
 const { version } = require("../package.json")
-const { handleAction } = require("./utils")
+const handleAction = require("./actions")
 
 program
   .name("luoye-tree")
@@ -12,5 +12,4 @@ program
   .option("-i,--ignore <string>", "指定需要忽略的文件夹/文件，输出树形结构")
   .parse(process.argv)
 
-const { directory, level, ignore } = program.opts()
-handleAction(directory, level, ignore)
+handleAction(program.opts())
