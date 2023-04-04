@@ -1,6 +1,6 @@
 const path = require("node:path")
 const handleIgnore = require("./handleIgnore")
-const createTree = require("./createTree")
+const createDirTree = require("./createDirTree")
 
 const handleAction = (options) => {
   const { directory, level, ignore } = options
@@ -8,8 +8,9 @@ const handleAction = (options) => {
   const ignore_array = handleIgnore(ignore)
   // 获取输入的绝对路径
   const targetPath = path.resolve(process.cwd(), directory)
-  const tree = createTree(targetPath, level, ignore_array)
-  console.log(tree)
+  const dirTree = createDirTree(targetPath, level, ignore_array)
+  console.log(dirTree)
+  console.log(dirTree.children[0].children)
 }
 
 module.exports = handleAction
