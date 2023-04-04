@@ -19,17 +19,19 @@ const createDirTree = (targetPath, level, ignore_array) => {
   // 创建根节点
   const rootDirNode = new DirNode(path.basename(targetPath))
   // 文件夹递归创建子节点
-  const createDirNode = (dirNode, tpath) => {
+  const createDirNode = (dirNode, tpath, curLevel) => {
+    if (curLevel >= level) return
+    curLevel++
     if (fs.statSync(tpath).isDirectory()) {
       const dirs = arrayDiff(fs.readdirSync(tpath), ignore_array)
       dirs.forEach((dir) => {
         const newDirNode = new DirNode(dir)
         dirNode.appendChild(newDirNode)
-        createDirNode(newDirNode, path.resolve(tpath, dir))
+        createDirNode(newDirNode, path.resolve(tpath, dir), curLevel)
       })
     }
   }
-  createDirNode(rootDirNode, targetPath)
+  createDirNode(rootDirNode, targetPath, 0)
   return rootDirNode
 }
 

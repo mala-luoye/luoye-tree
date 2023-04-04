@@ -10,7 +10,7 @@ const handleAction = (options) => {
   const targetPath = path.resolve(process.cwd(), directory)
   const dirTree = createDirTree(targetPath, level, ignore_array)
   console.log(dirTree)
-  console.log(dirTree.children[0].children)
+  // console.log(dirTree.children[0].children)
 }
 
 module.exports = handleAction
