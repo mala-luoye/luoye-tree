@@ -20,8 +20,8 @@ Usage: luoye-tree [options]
 
 Options:
   -v, --version            输出当前版本
-  -d,--directory <string>  指定目录，输出树形结构
-  -l,--level <number>      指定层级，输出树形结构
+  -d,--directory <string>  指定目录路径，输出树形结构
+  -l,--level <number>      限制目录层级，输出树形结构
   -i,--ignore <string>     指定需要忽略的文件夹/文件，输出树形结构
   -h, --help               display help for command
 ```
