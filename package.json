@@ -1,7 +1,7 @@
 {
   "name": "luoye-tree",
-  "version": "0.0.1-alpha",
-  "description": "",
+  "version": "1.0.0",
+  "description": "一个为文件目录输出树形结构的命令行工具。",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,10 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^10.0.0"
+  },
+  "homepage": "https://github.com/mala-luoye/luoye-tree#luoye-tree",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mala-luoye/luoye-tree"
   }
 }
