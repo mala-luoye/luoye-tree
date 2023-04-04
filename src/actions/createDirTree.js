@@ -16,6 +16,8 @@ class DirNode {
 
 // 创建目录树
 const createDirTree = (targetPath, level, ignore_array) => {
+  // level边界处理
+  level = level === undefined || level <= 0 ? 10 : level
   // 创建根节点
   const rootDirNode = new DirNode(path.basename(targetPath))
   // 文件夹递归创建子节点
