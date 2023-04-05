@@ -13,7 +13,7 @@ npm install luoye-tree -g
 #### 查看所有命令: `ltree -h`
 
 ```txt
-C:\Users\liliang\Desktop\demo>ltree -h
+D:\技术特性测试\mala-luoye\luoye-tree>ltree -h
 Usage: luoye-tree [options]
 
 一个为文件目录输出树形结构的命令行工具
@@ -26,27 +26,53 @@ Options:
   -h, --help               display help for command
 ```
 
-#### 使用命令：`ltree -d . -l 1`
+#### 指定当前目录 `+` 限定目录层级为2：`ltree -d . -l 2`
 
 ```txt
-C:\Users\liliang\Desktop\demo>ltree -d . -l 1
-demo
-└── docs-demo
-└── kunlun-design-icons
-└── luoye-tools
-└── mala-ui
-└── tally-book
-└── test-cli
+D:\技术特性测试\mala-luoye\luoye-tree>ltree -d . -l 2
+luoye-tree
+└── .git
+    ├── COMMIT_EDITMSG
+    ├── config
+    ├── description
+    ├── FETCH_HEAD
+    ├── HEAD
+    ├── hooks
+    ├── index
+    ├── info
+    ├── logs
+    ├── objects
+    ├── ORIG_HEAD
+    ├── packed-refs
+    └── refs
+└── .gitignore
+└── .prettierrc.cjs
+└── LICENSE
+└── node_modules
+    ├── .modules.yaml
+    ├── .pnpm
+    └── commander
+└── package.json
+└── pnpm-lock.yaml
+└── README.md
+└── src
+    ├── actions
+    ├── index.js
+    └── utils
 ```
 
-#### 使用命令：`ltree -d . -l 1 -i test-cli`
+#### 忽略文件或文件夹 .git、node_modules、pnpm-lock.yaml：`ltree -d . -l 2 -i .git,node_modules,pnpm-lock.yaml`
 
 ```txt
-C:\Users\liliang\Desktop\demo>ltree -d . -l 1 -i test-cli
-demo
-└── docs-demo
-└── kunlun-design-icons
-└── luoye-tools
-└── mala-ui
-└── tally-book
+D:\技术特性测试\mala-luoye\luoye-tree>ltree -d . -l 2 -i .git,node_modules,pnpm-lock.yaml
+luoye-tree
+└── .gitignore
+└── .prettierrc.cjs
+└── LICENSE
+└── package.json
+└── README.md
+└── src
+    ├── actions
+    ├── index.js
+    └── utils
 ```
